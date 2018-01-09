@@ -28,22 +28,38 @@
         </div>
 
         <form action="/action_page.php">
-          First name:
+          Username:
           <br>
-          <input type="text" name="firstname" value="Mickey">
+          <input type="text" name="username" >
           <br>
 
-          Last name:
+          Password:
           <br>
-          <input type="text" name="lastname" value="Mouse">
+          <input type="password" name="username" >
           <br>
           <br>
-          <input type="submit" value="Submit">
+          <input type="submit" value="signup">
         </form> 
       </div>
 
       <div id="login-div">
+        <div class="form-title-div">
+          Login
+        </div>
 
+        <form action="/action_page.php">
+          Username:
+          <br>
+          <input type="text" name="username" >
+          <br>
+
+          Password:
+          <br>
+          <input type="password" name="signup" >
+          <br>
+          <br>
+          <input type="submit" value="login">
+        </form> 
       </div>
     </div>
 
@@ -51,9 +67,20 @@
 </html>
 
 <style>
+#signup-div {
+  float: left;
+}
+
+#login-div {
+  float: right;
+}
+
 #form-container {
   position: absolute;
   top: 100px;
+  /*width: 300px;*/
+  left: 20%;
+  right: 20%;
 }
 
 body {

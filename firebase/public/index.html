@@ -32,37 +32,132 @@
   </head>
   <body>
 
+    <header id="header">
+      <div class="container">
+        <h1>
+          Pet Manager
+        </h1>
 
-    Hi there!
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
+      </div>
+    </header>
+
+    <br/>
+    <br/>
+
+
+    <div id="form-container">
+      <div id="signup-div">
+        <div class="form-title-div">
+          Sign Up
+        </div>
+
+        <form action="/action_page.php">
+          Username:
+          <br>
+          <input type="text" name="username" >
+          <br>
+
+          Password:
+          <br>
+          <input type="password" name="username" >
+          <br>
+          <br>
+          <input type="submit" value="signup">
+        </form> 
+      </div>
+
+      <div id="login-div">
+        <div class="form-title-div">
+          Login
+        </div>
+
+        <form action="/action_page.php">
+          Username:
+          <br>
+          <input type="text" name="username" >
+          <br>
+
+          Password:
+          <br>
+          <input type="password" name="signup" >
+          <br>
+          <br>
+          <input type="submit" value="login">
+        </form> 
+      </div>
     </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-
-        try {
-          let app = firebase.app();
-          let features = ['auth', 'database', 'messaging', 'storage'].filter(feature => typeof app[feature] === 'function');
-          document.getElementById('load').innerHTML = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
-    </script>
   </body>
 </html>
+
+<style>
+#signup-div {
+  float: left;
+}
+
+#login-div {
+  float: right;
+}
+
+#form-container {
+  position: absolute;
+  top: 100px;
+  /*width: 300px;*/
+  left: 20%;
+  right: 20%;
+}
+
+body {
+  background: #6699ff;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+.container {
+  position: relative;
+  margin: 0 auto;
+  width: 94%;
+  max-width: 1100px;
+  font-family: helvetica, sans-serif;
+}
+.content {
+  position: relative;
+  padding-top: 80px;
+}
+.content p {
+  margin-bottom: 10px;
+}
+#header {
+  z-index: 2;
+  position: fixed;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  background: #222;
+  color: white;
+}
+#header h1 {
+  top: 0px;
+  margin: 0px;
+  text-transform: uppercase;
+  font-size: 1.2em;
+}
+#nav {
+  position: absolute;
+  right: 0;
+  top: -15px;
+  height: 60px;
+}
+#nav ul li {
+  float: left;
+  list-style: none;
+}
+#nav ul li a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 0 10px;
+}</style>
