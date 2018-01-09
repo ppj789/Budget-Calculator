@@ -26,6 +26,7 @@
         body { border-top: 16px solid #ffa100; }
       }
     </style>
+
   </head>
   <body>
 
@@ -38,77 +39,79 @@
       </div>
     </header>
 
+    <div id="content">
 
-    <div id="form-container">
-      <div id="signup-div">
-        <div class="form-title-div">
-          Sign Up
-        </div>
+      <div id="heading-spacer"></div>
 
-        <form action="/action_page.php">
-          Username:
-          <br>
-          <input type="text" name="username" >
-          <br>
+      <h1>YOUR PETS</h1>
 
-          Password:
-          <br>
-          <input type="password" name="username" >
-          <br>
-          <br>
-          <input type="submit" value="signup">
-        </form> 
+
+      <div class="gallery">
+        <a target="_blank" href="fjords.jpg">
+        <img src="../../images/a.jpg" alt="Fjords" width="300" height="200">
+        </a>
+        <div class="desc">Add a description of the image here</div>
       </div>
 
-      <div id="login-div">
-        <div class="form-title-div">
-          Login
-        </div>
-
-        <form action="/action_page.php">
-          Username:
-          <br>
-          <input type="text" name="username" >
-          <br>
-
-          Password:
-          <br>
-          <input type="password" name="signup" >
-          <br>
-          <br>
-          <input type="submit" value="login">
-        </form> 
+      <div class="gallery">
+        <a target="_blank" href="forest.jpg">
+          <img src="../../images/b.jpg" alt="Forest" width="300" height="200">
+        </a>
+        <div class="desc">Add a description of the image here</div>
       </div>
+
+      <div class="gallery">
+        <a target="_blank" href="lights.jpg">
+          <img src="../../images/c.jpg" alt="Northern Lights" width="300" height="200">
+        </a>
+        <div class="desc">Add a description of the image here</div>
+      </div>
+
+      <div class="gallery">
+        <a target="_blank" href="mountains.jpg">
+          <img src="../../images/d.jpg" alt="Mountains" width="300" height="200">
+        </a>
+        <div class="desc">Add a description of the image here</div>
+      </div>
+
     </div>
 
   </body>
-</html>
-
 <style>
-#signup-div {
-  float: left;
+
+#content {
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
-#login-div {
-  float: right;
+#heading-spacer {
+  height: 100px;
 }
 
-#form-container {
-  position: absolute;
-  top: 100px;
-  /*width: 300px;*/
-  left: 20%;
-  right: 20%;
+div.gallery {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 180px;
+}
+
+div.gallery:hover {
+    border: 1px solid #777;
+}
+
+div.gallery img {
+    width: 100%;
+    height: auto;
+}
+
+div.desc {
+    padding: 15px;
+    text-align: center;
 }
 
 body {
   background: #ffffff;
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
+ 
 }
 .container {
   position: relative;
@@ -125,7 +128,6 @@ body {
   margin-bottom: 10px;
 }
 #header {
-  z-index: 2;
   position: fixed;
   width: 100%;
   height: 60px;
@@ -154,4 +156,17 @@ body {
   color: white;
   text-decoration: none;
   padding: 0 10px;
-}</style>
+}
+
+  </style>
+
+
+
+
+
+
+
+
+
+
+
