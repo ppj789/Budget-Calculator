@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dragon Monkeys</title>
+
+    <script defer src="/__/firebase/4.8.1/firebase-app.js"></script>
+    <script defer src="/__/firebase/4.8.1/firebase-auth.js"></script>
+    <script defer src="/__/firebase/4.8.1/firebase-database.js"></script>
+    <script defer src="/__/firebase/4.8.1/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/4.8.1/firebase-storage.js"></script>
+    <script defer src="/__/firebase/init.js"></script>
+
+  </head>
+
+  <body>
+
+    <header id="header">
+      <div class="container">
+        <h1>
+          Pet Manager
+        </h1>
+
+      </div>
+    </header>
+
+    <div id="content">
+
+      <div id="heading-spacer"></div>
+
+      <div id="pet-profile-div">
+        <div id="pet-pic">
+            <a target="_blank" href="fjords.jpg">
+            <img src="../../images/a.jpg" alt="Fjords" width="300" height="200">
+            </a>
+        </div>
+
+        <div id="pet-name">Alex</div>
+      </div>
+
+      <h1>STATS</h1>
+
+      <div id="stat-item">
+        Species: Dog
+      </div>
+
+      <div id="stat-item">
+        Breed: Alsatian
+      </div>
+
+      <div id="stat-item">
+        Weight: 10kg
+      </div>
+
+      <div id="stat-item">
+        Height: 50cm
+      </div>
+
+      <div id="stat-item">
+        Distance Travelled: 50km
+      </div>
+
+      <div id="stat-item">
+        Vet visits: 2
+      </div>
+
+      <div id="stat-item">
+        Favourite food: Steak
+      </div>
+
+    </div>
+
+</body>
+
+<style>
+
+img {
+    width: 120px;
+    height: 80px;
+    float: left;
+    border: 1px solid #777;
+}
+
+#pet-name {
+    height:140px;
+    width: 100%;
+    padding-top: 50px;
+    
+    padding-left: 160px;
+    font-size: 30px;
+}
+
+#pet-profile-div {
+    height: 140px;
+
+}
+
+#content {
+  padding-left: 90px;
+  padding-right: 50px;
+}
+
+#heading-spacer {
+  height: 100px;
+}
+
+.container {
+  position: relative;
+  margin: 0 auto;
+  width: 94%;
+  max-width: 1100px;
+  font-family: helvetica, sans-serif;
+}
+
+.content {
+  position: relative;
+  padding-top: 80px;
+}
+.content p {
+  margin-bottom: 10px;
+}
+#header {
+  position: fixed;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  background: #222;
+  color: white;
+}
+#header h1 {
+  top: 0px;
+  margin: 0px;
+  text-transform: uppercase;
+  font-size: 1.2em;
+}
+
+#stat-item {
+    margin-right: 50px;
+    margin-bottom: 50px;
+    float: left;
+    width: 40%;
+}
+
+
+
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
