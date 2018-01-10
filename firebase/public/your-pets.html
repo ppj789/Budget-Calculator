@@ -12,6 +12,56 @@
     <script defer src="/__/firebase/4.8.1/firebase-storage.js"></script>
     <script defer src="/__/firebase/init.js"></script>
 
+    <script type="text/javascript">
+    function toggleSignIn() {
+      var noErrors = true;
+      if (firebase.auth().currentUser) {
+        // [START signout]
+        firebase.auth().signOut();
+        window.location = "http://dragon-monkeys.firebaseapp.com/";
+        // [END signout]
+      } else {
+        window.location = "http://dragon-monkeys.firebaseapp.com/";
+        // Sign in with email and pass.
+        // [START authwithemail]
+    }
+
+    function initApp() {
+      // Listening for auth state changes.
+      // [START authstatelistener]
+      firebase.auth().onAuthStateChanged(function(user) {
+        // [START_EXCLUDE silent]
+        //document.getElementById('quickstart-verify-email').disabled = true;
+        // [END_EXCLUDE]
+
+        if (user) {
+          // User is signed in.
+          var displayName = user.displayName;
+          var email = user.email;
+          var emailVerified = user.emailVerified;
+          var photoURL = user.photoURL;
+          var isAnonymous = user.isAnonymous;
+          var uid = user.uid;
+          var providerData = user.providerData;
+          // [START_EXCLUDE]
+        }
+          // [END_EXCLUDE]
+
+        // [END_EXCLUDE]
+      });
+      // [END authstatelistener]
+      document.getElementById('sign-out').addEventListener('click', toggleSignIn, false);
+    }
+
+
+
+      window.onload = function() {
+        sessionStorage.getItem('uid');
+        initApp();
+      };
+
+    </script>
+
   </head>
   <body>
 
@@ -20,6 +70,10 @@
         <h1>
           Pet Manager
         </h1>
+
+      </div>
+
+      <div>
 
       </div>
     </header>
@@ -86,6 +140,15 @@
 
 
     </div>
+    <div class="quickstart-user-details-container">
+      Firebase sign-in status: <span id="quickstart-sign-in-status">Unknown</span>
+      <div>Firebase auth <code>currentUser</code> object value:</div>
+      <pre><code id="quickstart-account-details">null</code></pre>
+    </div>
+
+    <div>
+        <button class="mdl-button mdl-js-button mdl-button--raised" id="sign-out" name="signout">Sign Out</button>
+    </div>
 
   </body>
 <style>
@@ -132,7 +195,7 @@ div.desc {
 
 body {
   background: #ffffff;
- 
+
 }
 .container {
   position: relative;
@@ -165,14 +228,3 @@ body {
 
 
   </style>
-
-
-
-
-
-
-
-
-
-
-
