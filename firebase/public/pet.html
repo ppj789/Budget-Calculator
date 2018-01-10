@@ -18,8 +18,12 @@
 
     <header id="header">
       <div class="container">
-        <h1>
+       <h1>
+          <span id="menu-button-icon" onclick="openNav()">&#9776;</span>
           Pet Manager
+          <div id="profile-pic-header">
+            <img id="profile-pic" src="images/unknown.jpg">
+          </div>
         </h1>
 
       </div>
@@ -27,12 +31,21 @@
 
     <div id="content">
 
+        <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#">Settings</a>
+        <a href="#">Privacy</a>
+        <a href="#">About</a>
+        <a href="#">T & Cs</a>
+        <a href="#">Logout</a>
+      </div>
+
       <div id="heading-spacer"></div>
 
       <div id="pet-profile-div">
         <div id="pet-pic">
             <a target="_blank" href="fjords.jpg">
-            <img src="../../images/a.jpg" alt="Fjords" width="300" height="200">
+            <img src="images/a.jpg" alt="Fjords" width="300" height="200">
             </a>
         </div>
 
@@ -75,11 +88,48 @@
 
 <style>
 
+#profile-pic {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  float: left;
+  margin-top: 5px;
+}
+
+#profile-pic-header {
+  float: right;
+  margin-right: 25px;
+  
+}
+
+.closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+  margin-top: 10px;
+  float: right;
+}
+
+#menu-button-icon {
+  font-size:30px;
+  cursor:pointer;
+  color: #ffffff;
+  float: left;
+  margin-left: 25px;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+}
+
 img {
-    width: 120px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
     float: left;
     border: 1px solid #777;
+    border-radius: 50%;
 }
 
 #pet-name {
@@ -105,11 +155,45 @@ img {
   height: 100px;
 }
 
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav {
+    top: 8px;
+    font-size: 36px;
+    float: right;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
 .container {
   position: relative;
-  margin: 0 auto;
-  width: 94%;
-  max-width: 1100px;
+  width: 100%;
   font-family: helvetica, sans-serif;
 }
 
@@ -132,7 +216,8 @@ img {
   top: 0px;
   margin: 0px;
   text-transform: uppercase;
-  font-size: 1.2em;
+  font-size: 30px;
+  text-align: center;
 }
 
 #stat-item {
@@ -146,6 +231,15 @@ img {
 
 
 </style>
+<script>
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+</script>
 
 
 
