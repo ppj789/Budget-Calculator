@@ -14,14 +14,18 @@
 
     <script type="text/javascript">
     function toggleSignIn() {
-      var noErrors = true;
-      if (firebase.auth().currentUser) {
+      alert("signing out");
+
+      firebase.auth().signOut();
+
+      //window.location = "http://dragon-monkeys.firebaseapp.com/";
+      /*if (firebase.auth().currentUser) {
         // [START signout]
         firebase.auth().signOut();
         window.location = "http://dragon-monkeys.firebaseapp.com/";
         // [END signout]
       } else {
-        window.location = "http://dragon-monkeys.firebaseapp.com/";
+        window.location = "http://dragon-monkeys.firebaseapp.com/";*/
         // Sign in with email and pass.
         // [START authwithemail]
     }
@@ -43,7 +47,15 @@
           var isAnonymous = user.isAnonymous;
           var uid = user.uid;
           var providerData = user.providerData;
+
+          document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
+          document.getElementById('quickstart-account-details').textContent = JSON.stringify(user, null, '  ');
           // [START_EXCLUDE]
+        }
+        else{
+          document.getElementById('quickstart-sign-in-status').textContent = 'Signed out';
+          document.getElementById('quickstart-account-details').textContent = JSON.stringify(user, null, '  ');
+          window.location = "https://dragon-monkeys.firebaseapp.com"
         }
           // [END_EXCLUDE]
 

@@ -99,7 +99,7 @@
           //document.getElementById('quickstart-verify-email').disabled = true;
           // [END_EXCLUDE]
 
-          sessionStorage.setItem('uid', firebase.auth().currentUser.uid);
+          //sessionStorage.setItem('uid', firebase.auth().currentUser);
 
 
           if (user) {
@@ -111,6 +111,8 @@
             var isAnonymous = user.isAnonymous;
             var uid = user.uid;
             var providerData = user.providerData;
+
+            window.location = '/your-pets.html';
             // [START_EXCLUDE]
             document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
             document.getElementById('quickstart-sign-in').textContent = 'Sign out';
