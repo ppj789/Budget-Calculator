@@ -148,9 +148,6 @@
         <h1>
           <span id="menu-button-icon" onclick="openNav()">&#9776;</span>
           Pet Manager
-          <div id="profile-pic-header">
-            <img id="profile-pic" src="images/unknown.jpg">
-          </div>
         </h1>
 
       </div>
@@ -165,6 +162,12 @@
         <a href="#">About</a>
         <a href="#">T & Cs</a>
         <a href="#">Logout</a>
+      </div>
+
+      <div id="background-image">
+        <a target="_blank" href="mountains.jpg">
+          <img src="images/b.jpg" alt="Mountains" width="300" height="200">
+        </a>
       </div>
 
       <div id="welcome-card">
@@ -201,18 +204,22 @@
 </html>
 
 <style>
-#profile-pic {
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
-  float: left;
-  margin-top: 5px;
+
+#background-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #eeeeee;
 }
 
-#profile-pic-header {
-  float: right;
-  margin-right: 25px;
-  
+#welcome-card {
+  z-index: 2;
+  position: absolute;
+  background-color: #ff86f4;
+  height: 50%;
+  width: 40%;
+  left: 30%;
+  top: 25%;
 }
 
 .closebtn {
@@ -231,15 +238,6 @@
   color: #ffffff;
   float: left;
   margin-left: 25px;
-}
-
-#welcome-card {
-  position: absolute;
-  background-color: #ff86f4;
-  height: 50%;
-  width: 50%;
-  left: 250px;
-  top: 250px;
 }
 
 #signup-div {
@@ -311,6 +309,7 @@ body {
   margin-bottom: 10px;
 }
 #header {
+  z-index: 2;
   position: fixed;
   width: 100%;
   height: 60px;
