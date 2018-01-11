@@ -1,0 +1,141 @@
+#profile-pic {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  float: left;
+  margin-top: 5px;
+}
+
+#profile-pic-header {
+  float: right;
+  margin-right: 25px;
+
+}
+
+.closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+  margin-top: 10px;
+  float: right;
+}
+
+#menu-button-icon {
+  font-size:30px;
+  cursor:pointer;
+  color: #ffffff;
+  float: left;
+  margin-left: 25px;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+    float: left;
+    border: 1px solid #777;
+    border-radius: 50%;
+}
+
+#pet-name {
+    height:140px;
+    width: 100%;
+    padding-top: 50px;
+
+    padding-left: 160px;
+    font-size: 30px;
+}
+
+#pet-profile-div {
+    height: 140px;
+
+}
+
+#content {
+  padding-left: 90px;
+  padding-right: 50px;
+}
+
+#heading-spacer {
+  height: 100px;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav {
+    top: 8px;
+    font-size: 36px;
+    float: right;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  font-family: helvetica, sans-serif;
+}
+
+.content {
+  position: relative;
+  padding-top: 80px;
+}
+.content p {
+  margin-bottom: 10px;
+}
+#header {
+  position: fixed;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  background: #222;
+  color: white;
+}
+#header h1 {
+  top: 0px;
+  margin: 0px;
+  text-transform: uppercase;
+  font-size: 30px;
+  text-align: center;
+}
+
+#stat-item {
+    margin-right: 50px;
+    margin-bottom: 50px;
+    float: left;
+    width: 40%;
+}
+
+
+

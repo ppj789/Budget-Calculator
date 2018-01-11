@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dragon Monkeys</title>
+
+    <link rel="stylesheet" type="text/css" href="css/petprofile-page.css">
+
+    <script defer src="/__/firebase/4.8.1/firebase-app.js"></script>
+    <script defer src="/__/firebase/4.8.1/firebase-auth.js"></script>
+    <script defer src="/__/firebase/4.8.1/firebase-database.js"></script>
+    <script defer src="/__/firebase/4.8.1/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/4.8.1/firebase-storage.js"></script>
+    <script defer src="/__/firebase/init.js"></script>
+
+    <script type="text/javascript" src="js/petprofile-page.js"></script>
+
+  </head>
+
+  <body>
+
+    <header id="header">
+      <div class="container">
+       <h1>
+          <span id="menu-button-icon" onclick="openNav()">&#9776;</span>
+          Pet Manager
+          <div id="profile-pic-header">
+            <img id="profile-pic" src="images/unknown.jpg">
+          </div>
+        </h1>
+
+      </div>
+    </header>
+
+    <div id="content">
+
+        <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#">Settings</a>
+        <a href="#">Privacy</a>
+        <a href="#">About</a>
+        <a href="#">T & Cs</a>
+        <a href="#">Logout</a>
+      </div>
+
+      <div id="heading-spacer"></div>
+
+      <div id="pet-profile-div">
+        <div id="pet-pic">
+            <a target="_blank" href="fjords.jpg">
+            <img src="images/a.jpg" alt="Fjords" width="300" height="200">
+            </a>
+        </div>
+
+        <div id="pet-name">Alex</div>
+      </div>
+
+      <h1>STATS</h1>
+
+      <div id="stat-item">
+        Species: Dog
+      </div>
+
+      <div id="stat-item">
+        Breed: Alsatian
+      </div>
+
+      <div id="stat-item">
+        Weight: 10kg
+      </div>
+
+      <div id="stat-item">
+        Height: 50cm
+      </div>
+
+      <div id="stat-item">
+        Distance Travelled: 50km
+      </div>
+
+      <div id="stat-item">
+        Vet visits: 2
+      </div>
+
+      <div id="stat-item">
+        Favourite food: Steak
+      </div>
+
+    </div>
+
+</body>
+
+
+
+
+
+
+
+
+
+
