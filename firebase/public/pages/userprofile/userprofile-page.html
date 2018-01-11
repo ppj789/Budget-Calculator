@@ -18,17 +18,6 @@
       alert("signing out");
 
       firebase.auth().signOut();
-
-      //window.location = "http://dragon-monkeys.firebaseapp.com/";
-      /*if (firebase.auth().currentUser) {
-        // [START signout]
-        firebase.auth().signOut();
-        window.location = "http://dragon-monkeys.firebaseapp.com/";
-        // [END signout]
-      } else {
-        window.location = "http://dragon-monkeys.firebaseapp.com/";*/
-        // Sign in with email and pass.
-        // [START authwithemail]
     }
 
     function handleFileSelect(evt) {
@@ -42,12 +31,12 @@
       };
       // Push to child path.
       // [START oncomplete]
-      console.log("Your email is: " + auth.currentUser.email);
+      //console.log("Your email is: " + auth.currentUser.email);
       storageRef.child(auth.currentUser.email +'/' +file.name).put(file, metadata).then(function(snapshot) {
-        console.log('Uploaded', snapshot.totalBytes, 'bytes.');
-        console.log(snapshot.metadata);
+        //console.log('Uploaded', snapshot.totalBytes, 'bytes.');
+        //console.log(snapshot.metadata);
         var url = snapshot.downloadURL;
-        console.log('File available at', url);
+        //console.log('File available at', url);
         // [START_EXCLUDE]
         document.getElementById('linkbox').innerHTML = '<a href="' +  url + '">Click For File</a>';
         // [END_EXCLUDE]
@@ -58,6 +47,7 @@
       });
       // [END oncomplete]
     }
+
 
     function initApp() {
       // Listening for auth state changes.
@@ -242,8 +232,11 @@ div.desc {
 
 body {
   background: #ffffff;
-  font-family: "Lato", sans-serif;
+<<<<<<< HEAD
 
+=======
+  font-family: "Lato", sans-serif;
+>>>>>>> origin/master
 }
 
 .sidenav {
@@ -311,6 +304,10 @@ body {
   text-align: center;
 }
 
+
+<<<<<<< HEAD
+  </style>
+=======
 </style>
 
 <script>
@@ -322,13 +319,3 @@ function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
 }
 </script>
-<<<<<<< HEAD
-=======
-
-
-
-
-
-
-
->>>>>>> origin/master
