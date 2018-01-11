@@ -26,8 +26,8 @@
   width: 100%;
 }
 
-img {
-  z-index: -1;
+#dont-have-an-account-link {
+  font-size: 15px;
 }
 
 input {
@@ -75,6 +75,10 @@ button {
   color: #ffffff;
   float: left;
   margin-left: 25px;
+}
+
+u {
+  color: #ffffff;
 }
 
 
