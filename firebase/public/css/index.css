@@ -1,8 +1,52 @@
-#background-image {
+#background {
   position: absolute;
-  width: 100%;
+  width: 80%;
   height: 100%;
   background-color: #eeeeee;
+  left: 10%;
+  text-align: center;
+  background-image: url("../images/background.jpeg");
+  background-repeat: no-repeat;
+    background-size: cover ;
+}
+
+#background img {
+  height: 300px;
+  width: 50px;
+}
+
+#signup-text {
+  margin-top: 10%;
+  text-align: center;
+  font-size: 100px;
+  font-family: "Candara"
+}
+
+#input-fields {
+  width: 100%;
+}
+
+img {
+  z-index: -1;
+}
+
+input {
+  font-size: : 500px;
+  margin-top: 5%;
+  display:inline;
+  width:50%;
+  height: 30px;
+  text-align: center;
+}
+
+button { 
+  font-size: 20px;
+  height: 60px;
+  width: 120px;
+  margin-top: 5%;
+  background-color: #000000;
+  color: #ffffff; 
+  border-radius: 12px;
 }
 
 #welcome-card {
@@ -33,20 +77,9 @@
   margin-left: 25px;
 }
 
-#signup-div {
-  float: left;
-}
-
-#login-div {
-  float: right;
-}
-
-#form-container {
-
-}
 
 body {
-  background: #ffffff;
+  background: #000000;
   margin: 0;
   padding: 0;
   border: 0;
