@@ -28,10 +28,20 @@ function handleFileSelect(evt) {
 function addToDatabase(name, image){
   var database = firebase.database();
   var user = firebase.auth().currentUser;
-  database.ref('users/' + user.uid + "/pets").set({
-    petName: name,
+  database.ref('users/' + user.uid + "/pets/" + name).set({
     petImage: image
   });
+}
+
+function refreshPets(){
+  var database = firebase.database();
+  var user = firebase.auth().currentUser;
+  var num = 0;
+  database.ref('users/' + user.uid + "/pets").once("value", function(data) {
+    data.forEach(function(petName){
+      console.log("Pet" + num++ +": " + petName.key());
+    }
+  }));
 }
 
 function petGrid(v){
@@ -40,7 +50,7 @@ function petGrid(v){
     var img = document.createElement("img");
     img.src = "https://a.wattpad.com/useravatar/random_author13.256.874272.jpg";
     var name = document.createElement("button");
-    name.innerText = "pet" + i;
+    name.innerText = "new pet";
     name.setAttribute("id", "name.innerText");
     e.appendChild(img);
     e.appendChild(name);
@@ -79,6 +89,7 @@ function initApp() {
 window.onload = function() {
   sessionStorage.getItem('uid');
   initApp();
+  refreshPets();
 };
 
 
