@@ -35,9 +35,7 @@ function toggleSignIn() {
             // [END_EXCLUDE]
           });
           // [END authwithemail]
-          /*if (noErrors) {
-            window.location = "http://dragon-monkeys.firebaseapp.com/your-pets.html";
-          }*/
+
         }
         document.getElementById('quickstart-sign-in').disabled = true;
       }
@@ -98,7 +96,7 @@ function toggleSignIn() {
             var uid = user.uid;
             var providerData = user.providerData;
 
-            window.location = '/your-pets.html';
+            window.location = '/userprofile-page.html';
             // [START_EXCLUDE]
             document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
             document.getElementById('quickstart-sign-in').textContent = 'Sign out';
@@ -135,8 +133,3 @@ function openNav() {
 function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
 }
-
-
-
-
-
