@@ -15,7 +15,7 @@
     <script defer src="/__/firebase/4.8.1/firebase-storage.js"></script>
     <script defer src="/__/firebase/init.js"></script>
 
-    <script type="text/javascript" src="js/userprofile-page.js"></script>    
+    <script type="text/javascript" src="js/userprofile-page.js"></script>
 
   </head>
   <body>
@@ -53,16 +53,16 @@
 
       <h1>YOUR PETS</h1>
 
+      <div class="gallery" id="add-pet-button-div">
+        <button id="add-pet-button" onclick="petGrid(1)">Add Pet</button>
+        <!--<code id="PetGrid"></code>-->
+      </div>
+
       <div>
         <h6>Choose File</h6>
         <input type="file" id="file" name="file"/>
         <h6>File URL:</h6>
         <span id="linkbox"></span>
-      </div>
-
-
-      <div class="gallery" id="add-pet-button-div">
-        <button id="add-pet-button">Add Pet</button>
       </div>
 
 
@@ -78,5 +78,3 @@
     </div>
 
   </body>
-
-
