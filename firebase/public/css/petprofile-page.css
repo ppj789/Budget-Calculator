@@ -14,17 +14,44 @@
 }
 
 #pet-pic {
-    width: 160px;
-    height: 160px;
+    width: 120px;
+    height: 120px;
     border: 1px solid #777;
     border-radius: 50%;
     text-align: center;
 }
 
 #pet-name {
-  font-size: 30px;
+  font-size: 20px;
   width: 100%;
   font-family: "Candara"
+}
+
+#stats-panel {
+  margin-top: 5%;
+  width: 100%;
+  text-align: center;
+}
+
+#stats-title {
+  width: 100%;
+  text-align: left;
+  font-size: 40px;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-family: menlo;
+}
+
+.stat {
+  text-align: center
+}
+
+.stat-field {
+  float: left;
+}
+
+.stat-value {
+
 }
 
 #profile-pic {
@@ -67,7 +94,7 @@ body {
   padding: 0;
   border: 0;
   font-family: "Lato", sans-serif;
-  vertical-align: baseline;
+  /*vertical-align: baseline;*/
 
 }
 
