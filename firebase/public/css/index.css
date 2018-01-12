@@ -7,12 +7,7 @@
   text-align: center;
   background-image: url("../images/background.jpg");
   background-repeat: no-repeat;
-    background-size: cover ;
-}
-
-#background img {
-  height: 300px;
-  width: 50px;
+  background-size: cover ;
 }
 
 #signup-text {
