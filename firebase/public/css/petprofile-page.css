@@ -5,6 +5,7 @@
   background: linear-gradient(to bottom right, #ffffff, #ffffff);
   left: 10%;
   text-align: center;
+  overflow: auto;
 }
 
 #pet-header {
