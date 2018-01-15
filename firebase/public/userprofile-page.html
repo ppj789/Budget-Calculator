@@ -15,6 +15,9 @@
     <script defer src="/__/firebase/4.8.1/firebase-storage.js"></script>
     <script defer src="/__/firebase/init.js"></script>
 
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
     <script type="text/javascript" src="js/userprofile-page.js"></script>
 
   </head>
@@ -54,8 +57,11 @@
       <h1>YOUR PETS</h1>
 
       <div class="gallery" id="add-pet-button-div">
-        <button id="add-pet-button" onclick="petGrid(1)">Add Pet</button>
+        <button id="add-pet-button" name="addPet">Add Pet</button>
         <!--<code id="PetGrid"></code>-->
+        <div class="gallery" id="list-pet-div">
+
+        </div>
       </div>
 
       <div>
