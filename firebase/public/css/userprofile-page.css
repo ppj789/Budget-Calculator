@@ -1,3 +1,23 @@
+#dialogue-div {
+  position: fixed;
+  top: 0;
+  left:0;
+  height: 0%;
+  width: 0%;
+  background-color: rgba(0,0,0, 0.4);
+  z-index: 3;
+}
+
+#box {
+  margin-left: 25%;
+  margin-top: 10%;
+  height: 50%;
+  width: 50%;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+
+}
+
 #background {
   position: absolute;
   width: 80%;
