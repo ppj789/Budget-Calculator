@@ -8,6 +8,7 @@
   background-image: url("../images/background.jpg");
   background-repeat: no-repeat;
   background-size: cover ;
+  overflow: auto;
 }
 
 #signup-text {

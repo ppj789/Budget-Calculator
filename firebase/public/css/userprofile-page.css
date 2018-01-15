@@ -1,9 +1,92 @@
 #background {
   position: absolute;
   width: 80%;
-  height: 100%;
+  min-height: 100%;
   background: linear-gradient(to bottom right, #ffffff, #ffffff);
   left: 10%;
+  text-align: center;
+  overflow: auto;
+}
+
+#user-landing-strip{
+  position: absolute;
+  margin-top: 60px;
+  height: 500px;
+  width: 100%;
+}
+
+#cover-photo{
+  width: 100%;
+  height: 220px;
+  background-image: url("../images/cover_photo.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+#profile-pic-landing {
+  width: 100px;
+  height: 100px;
+  background-image: url("../images/abraham.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  float: left;
+}
+
+#user-name {
+  color: white;
+  float: right;
+  font-size: 30px;
+  padding-top: 66px;
+  padding-left: 10px;
+}
+
+#jason-stuff {
+  margin-top: 500px;
+}
+
+#profile-pic-landing-container 
+{
+  position: absolute;
+  bottom: 0;
+}
+
+#pets-panel {
+  margin-top: 320px;
+  width: 100%;
+}
+
+#pets-title {
+  width: 100%;
+  text-align: left;
+  font-size: 40px;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-family: menlo;
+}
+
+.pets-list {
+  text-align: left;
+  padding-left: 30px;
+  
+}
+
+.pet {
+  margin-top: 12px;
+  position: relative;
+  /*background-color: #000000;*/
+  width: 190px;
+  text-align: center;
+  float: left;
+}
+
+.pet-pic {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.pet-name {
   text-align: center;
 }
 
