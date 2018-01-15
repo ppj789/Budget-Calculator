@@ -48,7 +48,7 @@ function refreshPets(){
     data.forEach(function(pet){
       if(pet.key == "num"){
         numPet = pet.val();
-        console.log("Number of Pets: " + numPet);
+        //console.log("Number of Pets: " + numPet);
       }
       else{
         var img = document.createElement("img");
@@ -78,19 +78,12 @@ function refreshPets(){
   //document.getElementById("PetGrid").innerText = e.innerHTML;
 }
 
-function addPet(){
-  console.log("add Pet");
-  var numPet = 0;
-  database.ref('users/' + auth.uid + '/pets').once("value").then(function(snapshot){
-    numPet = snapshot.child("num").val();
-    console.log("numPet: " + numPet);
-  });
+function HateyouFireBase(numPet){
   numPet++;
   console.log("new numPet: " + numPet)
-  database.ref('users/' + auth.uid + '/pets').set({
-    num: numPet
-  })
-  database.ref('users/' + auth.uid + '/pets/pet ' + (numPet-1)).set({
+  database.ref('users/' + auth.uid + '/pets').update({ num: numPet });
+  var refStr =   database.ref('users/' + auth.uid + '/pets/pet ' + numPet);
+  refStr.set({
     petImg: "dog.png",
     petName: "default"
   });
@@ -99,8 +92,17 @@ function addPet(){
   database.ref('users/' + auth.uid + "/pets/" + name).set({
     petImage: image
   });*/
-  console.log("refresh being called ");
+  //console.log("refresh being called ");
   refreshPets();
+}
+
+function addPet(){
+  //console.log("add Pet");
+  database.ref('users/' + auth.uid + "/pets").once("value").then(function(snapshot) {
+    var numPet = snapshot.child("num").val();
+    //console.log("numPet retrieved addPet(): " + numPet);
+    HateyouFireBase(numPet);
+  });
 }
 
 /*function petGrid(v){
@@ -123,7 +125,7 @@ function initApp() {
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       fireConnect();
-      console.log("refresh in initApp");
+      //console.log("refresh in initApp");
       refreshPets();
 
       var displayName = user.displayName;
@@ -146,7 +148,7 @@ function initApp() {
     }
   });
   document.getElementById('sign-out').addEventListener('click', toggleSignIn, false);
-  document.getElementById('file').addEventListener('change', handleFileSelect, false);
+  //document.getElementById('file').addEventListener('change', handleFileSelect, false);
 }
 
 
