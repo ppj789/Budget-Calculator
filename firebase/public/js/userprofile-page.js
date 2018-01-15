@@ -157,7 +157,8 @@ window.onload = function() {
 };
 
 
-/* front-end and trash*/
+/* front-end dynamism */
+
 function openNav() {
     document.getElementById("mySidenav").style.width = "250px";
 }
