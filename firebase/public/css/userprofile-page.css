@@ -1,34 +1,10 @@
-
-#profile-pic {
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
-  float: left;
-  margin-top: 5px;
-}
-
-#profile-pic-header {
-  float: right;
-  margin-right: 25px;
-
-}
-
-.closebtn {
+#background {
   position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-  margin-top: 10px;
-  float: right;
-}
-
-#menu-button-icon {
-  font-size:30px;
-  cursor:pointer;
-  color: #ffffff;
-  float: left;
-  margin-left: 25px;
+  width: 80%;
+  height: 100%;
+  background: linear-gradient(to bottom right, #ffffff, #ffffff);
+  left: 10%;
+  text-align: center;
 }
 
 #add-pet-button-div {
@@ -71,9 +47,47 @@ div.desc {
     text-align: center;
 }
 
+#profile-pic {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  float: left;
+  margin-top: 5px;
+  border: 1px solid #777;
+
+}
+
+#profile-pic-header {
+  float: right;
+  margin-right: 25px;
+
+}
+
+.closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+  margin-top: 10px;
+  float: right;
+}
+
+#menu-button-icon {
+  font-size:30px;
+  cursor:pointer;
+  color: #ffffff;
+  float: left;
+  margin-left: 25px;
+}
+
 body {
-  background: #ffffff;
+  background: #000000;
+  margin: 0;
+  padding: 0;
+  border: 0;
   font-family: "Lato", sans-serif;
+  /*vertical-align: baseline;*/
 
 }
 
@@ -81,7 +95,7 @@ body {
     height: 100%;
     width: 0;
     position: fixed;
-    z-index: 1;
+    z-index:2;
     left: 0;
     background-color: #111;
     overflow-x: hidden;
@@ -114,11 +128,11 @@ body {
 }
 
 .container {
-
   position: relative;
   width: 100%;
   font-family: helvetica, sans-serif;
 }
+
 .content {
   position: relative;
   padding-top: 80px;
@@ -127,6 +141,7 @@ body {
   margin-bottom: 10px;
 }
 #header {
+  z-index: 1;
   position: fixed;
   width: 100%;
   height: 60px;
@@ -141,3 +156,8 @@ body {
   font-size: 30px;
   text-align: center;
 }
+
+
+
+
+

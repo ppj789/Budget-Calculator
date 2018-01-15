@@ -40,8 +40,8 @@ function refreshPets(){
   database.ref('users/' + user.uid + "/pets").once("value", function(data) {
     data.forEach(function(petName){
       console.log("Pet" + num++ +": " + petName.key());
-    }
-  }));
+    })
+  });
 }
 
 function petGrid(v){
@@ -93,7 +93,8 @@ window.onload = function() {
 };
 
 
-/* front-end and trash*/
+/* front-end dynamism */
+
 function openNav() {
     document.getElementById("mySidenav").style.width = "250px";
 }

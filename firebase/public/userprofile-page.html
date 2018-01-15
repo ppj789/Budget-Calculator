@@ -37,7 +37,7 @@
       </div>
     </header>
 
-    <div id="content">
+    <content>
 
       <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -48,33 +48,34 @@
         <a href="#">Logout</a>
       </div>
 
-      <div id="heading-spacer"></div>
+      <div id="background">
 
+        <h1>YOUR PETS</h1>
 
-      <h1>YOUR PETS</h1>
+        <div class="gallery" id="add-pet-button-div">
+          <button id="add-pet-button" onclick="petGrid(1)">Add Pet</button>
+          <!--<code id="PetGrid"></code>-->
+        </div>
 
-      <div class="gallery" id="add-pet-button-div">
-        <button id="add-pet-button" onclick="petGrid(1)">Add Pet</button>
-        <!--<code id="PetGrid"></code>-->
+        <div>
+          <h6>Choose File</h6>
+          <input type="file" id="file" name="file"/>
+          <h6>File URL:</h6>
+          <span id="linkbox"></span>
+        </div>
+
+        <div class="quickstart-user-details-container">
+          Firebase sign-in status: <span id="quickstart-sign-in-status">Unknown</span>
+          <div>Firebase auth <code>currentUser</code> object value:</div>
+          <pre><code id="quickstart-account-details">null</code></pre>
+        </div>
+
+        <div>
+            <button class="mdl-button mdl-js-button mdl-button--raised" id="sign-out" name="signout">Sign Out</button>
+        </div>
+
       </div>
 
-      <div>
-        <h6>Choose File</h6>
-        <input type="file" id="file" name="file"/>
-        <h6>File URL:</h6>
-        <span id="linkbox"></span>
-      </div>
-
-
-    </div>
-    <div class="quickstart-user-details-container">
-      Firebase sign-in status: <span id="quickstart-sign-in-status">Unknown</span>
-      <div>Firebase auth <code>currentUser</code> object value:</div>
-      <pre><code id="quickstart-account-details">null</code></pre>
-    </div>
-
-    <div>
-        <button class="mdl-button mdl-js-button mdl-button--raised" id="sign-out" name="signout">Sign Out</button>
-    </div>
+  </content>
 
   </body>
