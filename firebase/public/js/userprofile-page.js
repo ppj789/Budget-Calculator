@@ -41,7 +41,7 @@ function handleFileSelect(evt) {
 }*/
 
 function refreshPets(){
-  var e = document.getElementById('list-pet-div');
+  var e = document.getElementById('pets-list');
   e.innerHTML = "";
   var numPet = 0;
   database.ref('users/' + auth.uid + "/pets").once("value", function(data) {
@@ -64,13 +64,19 @@ function refreshPets(){
           console.log("image failed");
           img.src = "https://firebasestorage.googleapis.com/v0/b/dragon-monkeys.appspot.com/o/dog.png?alt=media&token=9aeedbd1-8d6b-4c2e-bc2a-d697161e9cff";
         });
+        img.class = "pet-pic";
 
-
+        var divi = document.createElement("div");
+        var nameDiv = document.createElement("div");
+        divi.class = "pet";
+        nameDiv.class = "pet-name";
 
         name.innerText = pet.child("petName").val();
 
-        e.appendChild(img);
-        e.appendChild(name);
+        divi.appendChild(img);
+        nameDiv.appendChild(name);
+        divi.appendChild(nameDiv);
+        e.appendChild(divi);
       }
     })
     console.log("finished refresh");
