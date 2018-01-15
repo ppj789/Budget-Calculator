@@ -166,3 +166,34 @@ function openNav() {
 function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
 }
+
+function openDialogue() {
+    document.getElementById("dialogue-div").style.height = "100%";
+    document.getElementById("dialogue-div").style.width = "100%";
+    document.getElementsByTagName("BODY")[0].style.overflow = "hidden";
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
