@@ -10,11 +10,11 @@ function toggleSignIn() {
           var email = document.getElementById('email').value;
           var password = document.getElementById('password').value;
           if (email.length < 4) {
-            alert('Please enter an email address.');
+            alert('Please enter a longer email address.');
             return;
           }
           if (password.length < 4) {
-            alert('Please enter a password.');
+            alert('Please enter a longer password.');
             return;
           }
           // Sign in with email and pass.
@@ -42,7 +42,7 @@ function toggleSignIn() {
       /**
        * Handles the sign up button press.
        */
-      function handleSignUp() {
+      /*function handleSignUp() {
         var email = document.getElementById('email').value;
         var password = document.getElementById('password').value;
         if (email.length < 4) {
@@ -69,7 +69,7 @@ function toggleSignIn() {
           // [END_EXCLUDE]
         });
         // [END createwithemail]
-      }
+      }*/
       /**
        * initApp handles setting up UI event listeners and registering Firebase auth listeners:
        *  - firebase.auth().onAuthStateChanged: This listener is called when the user is signed in or
@@ -98,16 +98,16 @@ function toggleSignIn() {
 
             window.location = '/userprofile-page.html';
             // [START_EXCLUDE]
-            document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
+            //document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
             document.getElementById('quickstart-sign-in').textContent = 'Sign out';
-            document.getElementById('quickstart-account-details').textContent = JSON.stringify(user, null, '  ');
+            //document.getElementById('quickstart-account-details').textContent = JSON.stringify(user, null, '  ');
             // [END_EXCLUDE]
           } else {
             // User is signed out.
             // [START_EXCLUDE]
-            document.getElementById('quickstart-sign-in-status').textContent = 'Signed out';
+            //document.getElementById('quickstart-sign-in-status').textContent = 'Signed out';
             document.getElementById('quickstart-sign-in').textContent = 'Sign in';
-            document.getElementById('quickstart-account-details').textContent = 'null';
+            //document.getElementById('quickstart-account-details').textContent = 'null';
             // [END_EXCLUDE]
           }
           // [START_EXCLUDE silent]
@@ -116,7 +116,7 @@ function toggleSignIn() {
         });
         // [END authstatelistener]
         document.getElementById('quickstart-sign-in').addEventListener('click', toggleSignIn, false);
-        document.getElementById('quickstart-sign-up').addEventListener('click', handleSignUp, false);
+        //document.getElementById('quickstart-sign-up').addEventListener('click', handleSignUp, false);
       }
 
       window.onload = function() {
