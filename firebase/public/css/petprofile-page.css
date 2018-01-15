@@ -42,17 +42,35 @@
   font-family: menlo;
 }
 
-.stat {
-  text-align: center
+.stats-list {
+  position: absolute;
+  text-align: center;
+  width: 50%;
+  margin-left: 25%;
 }
 
-.stat-field {
+.stat {
+  margin-top: 12px;
+  text-align: center;
+  background-color: #6a6c70;
+  color: #ffffff;
+  width: auto;
+  border-radius: 12px;
+  font-size: 24px;
+}
+
+/*.stat-field {
+  position: absolute;
+  text-align: center;
   float: left;
+  width: 100%;
 }
 
 .stat-value {
-
-}
+  position: absolute;
+  text-align: center;
+  width: 100%;
+}*/
 
 #profile-pic {
   height: 50px;
