@@ -33,13 +33,6 @@ function handleFileSelect(evt) {
   });
 }
 
-/*function addToDatabase(name, image){
-  console.log("here is the user uid: " + auth.uid);
-  database.ref('users/' + auth.uid + "/pets/" + name).set({
-    petImage: image
-  });
-}*/
-
 function refreshPets(){
   var e = document.getElementById('pets-list');
   e.innerHTML = "";
@@ -48,7 +41,6 @@ function refreshPets(){
     data.forEach(function(pet){
       if(pet.key == "num"){
         numPet = pet.val();
-        //console.log("Number of Pets: " + numPet);
       }
       else{
         var img = document.createElement("img");
@@ -57,8 +49,6 @@ function refreshPets(){
         console.log("Pet: " + petName);
 
         storage.refFromURL("gs://dragon-monkeys.appspot.com/" + auth.uid + "/" + pet.child("petImg").val()).getDownloadURL().then(function(url) {
-          // `url` is the download URL for 'images/stars.jpg'
-          // Or inserted into an <img> element:
           img.src = url;
         }).catch(function(error) {
           console.log("image failed");
@@ -72,6 +62,7 @@ function refreshPets(){
         nameDiv.class = "pet-name";
 
         name.innerText = pet.child("petName").val();
+        name.onclick = Petprofile(pet.key);
 
         divi.appendChild(img);
         nameDiv.appendChild(name);
@@ -81,7 +72,6 @@ function refreshPets(){
     })
     console.log("finished refresh");
   });
-  //document.getElementById("PetGrid").innerText = e.innerHTML;
 }
 
 function HateyouFireBase(numPet){
@@ -93,12 +83,6 @@ function HateyouFireBase(numPet){
     petImg: "dog.png",
     petName: "default"
   });
-
-  /*console.log("here is the user uid: " + auth.uid);
-  database.ref('users/' + auth.uid + "/pets/" + name).set({
-    petImage: image
-  });*/
-  //console.log("refresh being called ");
   refreshPets();
 }
 
@@ -111,20 +95,10 @@ function addPet(){
   });
 }
 
-/*function petGrid(v){
-  var e = document.getElementById('add-pet-button-div'); // whatever you want to append the rows to:
-  for(var i = 0; i < v; i++){
-    var img = document.createElement("img");
-    img.src = "https://a.wattpad.com/useravatar/random_author13.256.874272.jpg";
-    var name = document.createElement("button");
-    name.innerText = "new pet";
-    name.setAttribute("id", "name.innerText");
-    e.appendChild(img);
-    e.appendChild(name);
-    addToDatabase(name.innerText, img.src);
-  }
-  //document.getElementById("PetGrid").innerText = e.innerHTML;
-}*/
+//use this method to get to the pets profile (i.e. pet 0)
+function Petprofile(pet){
+  windows.location = "https://dragon-monkeys.firebaseapp.com/petprofile-page.html?Pet="+pet;
+}
 
 function initApp() {
 
@@ -183,28 +157,3 @@ function openDialogue() {
 function closeDialogue() {
   document.getElementById("dialogue-div").style.zIndex = "0";
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
