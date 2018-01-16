@@ -17,14 +17,27 @@
 }
 
 #signup-text {
-  margin-top: 10%;
+  margin-top: 100px;
   text-align: center;
   font-size: 100px;
-  font-family: "Candara"
+  color: #FFFFFF;
+  font-family: "Candara";
+  margin-bottom: 30px;
 }
 
 #input-fields {
-  width: 100%;
+  width: 80%;
+  color: #FFFFFF;
+  text-align: right;
+}
+
+.mdl-textfield__input {
+  margin-top: 50px;
+  margin-left: 100px;
+  margin-right: 50px;
+  border-radius: 8px;
+  text-align: right;
+
 }
 
 #dont-have-an-account-link {

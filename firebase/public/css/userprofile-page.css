@@ -72,6 +72,11 @@
 
 }
 
+#pet-fact-done-button {
+  position: absolute;
+  bottom: 20px;
+}
+
 #background {
   position: absolute;
   width: 80%;
