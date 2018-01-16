@@ -5,10 +5,11 @@
   height: 100%;
   width: 100%;
   background-color: rgba(0,0,0, 0.4);
-  z-index: 3;
+  z-index: -1;
 }
 
 #box {
+  position: absolute;
   margin-left: 25%;
   margin-top: 120px;
   height: 500px;

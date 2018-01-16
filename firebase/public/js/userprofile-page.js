@@ -176,9 +176,12 @@ function closeNav() {
 }
 
 function openDialogue() {
-    document.getElementById("dialogue-div").style.height = "100%";
-    document.getElementById("dialogue-div").style.width = "100%";
+    document.getElementById("dialogue-div").style.zIndex = "3";
     document.getElementsByTagName("BODY")[0].style.overflow = "hidden";
+}
+
+function closeDialogue() {
+  document.getElementById("dialogue-div").style.zIndex = "0";
 }
 
 
