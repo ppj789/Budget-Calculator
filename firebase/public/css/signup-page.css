@@ -16,6 +16,46 @@
   width: 50px;
 }
 
+#signup-step-1 {
+  display: ;
+}
+
+#signup-step-2 {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  display: none;
+}
+
+#cover-photo{
+  width: 80%;
+  margin-left: 10%;
+  height: 220px;
+  background-image: url("../images/cover_photo_placeholder.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  
+}
+
+#profile-pic-landing {
+
+  width: 100px;
+  height: 100px;
+  background-image: url("../images/profile-pic-placeholder.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: 10px;
+  margin-left: 45%;
+  border-radius: 8px;
+}
+
+#signup-step-3 {
+  color: #FFFFFF;
+  text-align: center;
+  display: none;
+}
+
 #signup-text {
   margin-top: 100px;
   text-align: center;
@@ -53,7 +93,7 @@ input {
   text-align: center;
 }
 
-button { 
+.mdl-button { 
   font-size: 20px;
   height: 60px;
   width: 120px;

@@ -121,3 +121,34 @@ window.onload = function() {
 
 
 /* front-end dynamisity */
+function toggleButton(num)
+{
+  switch(num)
+  {
+    case 1:
+      document.getElementById("signup-step-1").style.display = "none";
+      document.getElementById("signup-step-2").style.display = "block";
+      document.getElementById("signup-step-3").style.display = "none";
+      break;
+    case 2:
+      document.getElementById("signup-step-1").style.display = "none";
+      document.getElementById("signup-step-2").style.display = "none";
+      document.getElementById("signup-step-3").style.display = "block";
+      break;
+
+    case 3:
+      break;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+

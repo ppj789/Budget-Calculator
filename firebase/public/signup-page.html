@@ -33,21 +33,49 @@
 
       <div id="background">
 
+        
         <div id="signup-text">Signup</div>
-      
-        <div id="input-fields">
-          Name
-          <input class="mdl-textfield__input" type="text" id="name" name="name"/><br/>
+        
+        <div id="signup-step-1">
+          <div id="input-fields">
+            Name
+            <input class="mdl-textfield__input" type="text" id="name" name="name"/><br/>
 
-          Email
-          <input class="mdl-textfield__input" type="text" id="email" name="email"/><br/>
-           
-          Password
-          <input class="mdl-textfield__input" type="password" id="password" name="password"/>
-        </div><br/>
+            Email
+            <input class="mdl-textfield__input" type="text" id="email" name="email"/><br/>
+             
+            Password
+            <input class="mdl-textfield__input" type="password" id="password" name="password"/>
+          </div><br/>
 
-        <button class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-sign-up" name="signup">Sign Up</button>
-   
+          <button class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-sign-up" name="signup" onclick="toggleButton(1)">Next</button>
+        </div>
+
+
+        <div id="signup-step-2">
+          <div id="cover-photo">
+            
+          </div>
+              
+          <div id="profile-pic-landing">
+          </div>
+
+
+          <button class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-sign-up" name="signup" onclick="toggleButton(2)">Skip</button>
+
+        </div>
+
+        <div id="signup-step-3">
+          Don't start with an empty profile<br/><button id="add-pet-button">Add Pet</button>
+
+          <br/>
+
+          <a href="https://dragon-monkeys.firebaseapp.com/userprofile-page.html">
+              <button class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-sign-up" name="signup" onclick="toggleButton(3)">Skip</button>
+          </a>
+        </div>
+
+
 
       </div>
       
