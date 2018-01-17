@@ -77,6 +77,15 @@
   bottom: 20px;
 }
 
+a {
+  text-decoration: none;
+  color: #ccc;;
+}
+
+a:hover {
+    color: #555;
+}
+
 #background {
   position: absolute;
   width: 80%;
