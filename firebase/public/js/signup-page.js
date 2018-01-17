@@ -86,12 +86,12 @@ function stepone(){
   }
 
   firebase.auth().createUserWithEmailAndPassword(email, password).then(function(firebaseUser) {
-    console.log("successful" + firebase.auth().uid);
+    console.log("successful " + firebase.auth().currentUser.uid);
 
     //document.getElementById('quickstart-sign-up').textContent = "wait";
     //document.getElementById('quickstart-sign-up').disabled = true;
 
-    firebase.database().ref('users/' + firebase.auth().uid).update({ username: name});
+    //firebase.database().ref('users/' + firebase.auth().uid).update({ username: name});
   }).catch(function(error) {
         // Handle Errors here.
     var errorCode = error.code;
@@ -115,14 +115,20 @@ function stepone(){
 }
 
 
+function userdetails(){
+  var userName = document.getElementById('name').value;
+  //when we make abnner and profile usable.
+  //var userImage;
+  //var userBorder;
 
 
-      /**
-       * initApp handles setting up UI event listeners and registering Firebase auth listeners:
-       *  - firebase.auth().onAuthStateChanged: This listener is called when the user is signed in or
-       *    out, and that is where we update the UI.
-       */
-function initApp() {
+
+  firebase.database().ref('users/' + firebase.auth().currentUser.uid).update({ name: userName});
+  console.log("added name");
+}
+
+
+/*function initApp() {
     // Listening for auth state changes.
     // [START authstatelistener]
       // [START_EXCLUDE silent]
@@ -162,11 +168,11 @@ function initApp() {
     // [END authstatelistener]
   //document.getElementById('quickstart-sign-in').addEventListener('click', toggleSignIn, false);
   //document.getElementById('quickstart-sign-up').addEventListener('click', handleSignUp, false);
-}
+}*/
 
 
 window.onload = function() {
-  initApp();
+  //initApp();
 };
 
 
@@ -187,6 +193,7 @@ function toggleButton(num)
       }
       break;
     case 2:
+      userdetails();
       document.getElementById("signup-step-1").style.display = "none";
       document.getElementById("signup-step-2").style.display = "none";
       document.getElementById("signup-step-3").style.display = "block";
