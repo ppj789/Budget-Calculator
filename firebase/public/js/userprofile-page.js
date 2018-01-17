@@ -1,4 +1,5 @@
 /* back-end boredom */
+
 var database;
 var auth;
 var storage;
