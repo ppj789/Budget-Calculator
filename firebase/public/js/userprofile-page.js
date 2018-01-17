@@ -58,11 +58,11 @@ function refreshPets(){
 
         var divi = document.createElement("div");
         var nameDiv = document.createElement("div");
-        divi.class = "pet";
+        divi.class = "pet-pic";
         nameDiv.class = "pet-name";
 
         name.innerText = pet.child("petName").val();
-        name.onclick = Petprofile(pet.key);
+        name.addEventListener("click", function() { Petprofile(pet.key); }, true);
 
         divi.appendChild(img);
         nameDiv.appendChild(name);
@@ -97,7 +97,8 @@ function addPet(){
 
 //use this method to get to the pets profile (i.e. pet 0)
 function Petprofile(pet){
-  windows.location = "https://dragon-monkeys.firebaseapp.com/petprofile-page.html?Pet="+pet;
+  pet = pet.replace("pet ", "");
+  window.location = "https://dragon-monkeys.firebaseapp.com/petprofile-page.html?Pet=" + pet;
 }
 
 function initApp() {

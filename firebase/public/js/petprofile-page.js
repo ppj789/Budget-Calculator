@@ -17,14 +17,18 @@ function toggleSignIn() {
 }
 
 function GetfromURL(){
-  var queryStart = url.indexOf("=") + 1;
-  var query = url.slice(queryStart, url.length);
+  var queryStart = window.location.href.indexOf("=") + 1;
+  var query = window.location.href.slice(queryStart, window.location.href.length);
 
     if (query === ""){
       window.location = "https://dragon-monkeys.firebaseapp.com/userprofile-page.html";
     }
 
     pet = query;
+
+    pet = pet.replace("%20", " ");
+
+    console.log("Pet that will be opened: "+ pet);
 }
 
 function initApp() {
@@ -32,9 +36,6 @@ function initApp() {
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       fireConnect();
-      //console.log("refresh in initApp");
-      refreshPets();
-
       GetfromURL();
 
       var displayName = user.displayName;

@@ -91,7 +91,7 @@ function initApp() {
       var isAnonymous = user.isAnonymous;
       var uid = user.uid;
       var providerData = user.providerData;
-      window.location = '/userprofile-page.html';
+      //window.location = '/userprofile-page.html';
         // [START_EXCLUDE]
         //document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
       //document.getElementById('quickstart-sign-in').textContent = 'Sign out';
@@ -140,15 +140,3 @@ function toggleButton(num)
       break;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
