@@ -120,11 +120,11 @@ function initApp() {
       document.getElementById('add-pet-button').addEventListener('click', addPet, false);
 
       document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
-      document.getElementById('quickstart-account-details').textContent = JSON.stringify(user, null, '  ');
+      //document.getElementById('quickstart-account-details').textContent = JSON.stringify(user, null, '  ');
     }
     else{
       document.getElementById('quickstart-sign-in-status').textContent = 'Signed out';
-      document.getElementById('quickstart-account-details').textContent = JSON.stringify(user, null, '  ');
+      //document.getElementById('quickstart-account-details').textContent = JSON.stringify(user, null, '  ');
       window.location = "https://dragon-monkeys.firebaseapp.com"
     }
   });
