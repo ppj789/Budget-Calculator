@@ -118,21 +118,65 @@ function stepone(){
 function userdetails(){
   var userName = document.getElementById('name').value;
   //when we make abnner and profile usable.
-  //var userImage;
-  //var userBorder;
+  //var userImage = document.getElementById('coverfile').value;
+  //var userBorder = document.getElementById('picfile').value;
 
 
 
   firebase.database().ref('users/' + firebase.auth().currentUser.uid).update({ name: userName});
+  //firebase.database().ref('users/' + firebase.auth().currentUser.uid).update({ name: userName});
+  //firebase.database().ref('users/' + firebase.auth().currentUser.uid).update({ name: userName});
   console.log("added name");
 }
 
+function banner(evt){
+  uploadpic(evt);
+  firebase.database().ref('users/' + firebase.auth().currentUser.uid).update({ banner:  evt.target.files[0].name});
+}
+function profile(evt){
+  uploadpic(evt);
+  firebase.database().ref('users/' + firebase.auth().currentUser.uid).update({ picture:  evt.target.files[0].name});
+}
 
-/*function initApp() {
+
+function uploadpic(evt){
+  evt.stopPropagation();
+  evt.preventDefault();
+
+  var file = evt.target.files[0];
+  var metadata = {
+    'contentType': file.type
+  };
+  console.log("Your uid is: " + firebase.auth().currentUser.uid);
+  firebase.storage().ref().child(firebase.auth().currentUser.uid +'/' +file.name).put(file, metadata).then(function(snapshot) {
+    console.log('Uploaded', snapshot.totalBytes, 'bytes.');
+    console.log(snapshot.metadata);
+    var url = snapshot.downloadURL;
+    console.log('File available at', url);
+  }).catch(function(error) {
+    console.error('Upload failed:', error);
+  });
+}
+
+
+function initApp() {
+  document.getElementById('coverfile').addEventListener('change', banner, false);
+  document.getElementById('picfile').addEventListener('change', profile, false);
+
+
+
+
+
+
+
+
+
+
+
     // Listening for auth state changes.
     // [START authstatelistener]
       // [START_EXCLUDE silent]
-  firebase.auth().onAuthStateChanged(function(user) {
+  /*firebase.auth().onAuthStateChanged(function(user) {
       //document.getElementById('quickstart-verify-email').disabled = true;
       // [END_EXCLUDE]
         //sessionStorage.setItem('uid', firebase.auth().currentUser);
@@ -145,6 +189,8 @@ function userdetails(){
       var isAnonymous = user.isAnonymous;
       var uid = user.uid;
       var providerData = user.providerData;
+
+
 
 
       //window.location = '/userprofile-page.html';
@@ -164,15 +210,15 @@ function userdetails(){
     // [START_EXCLUDE silent]
     //document.getElementById('quickstart-sign-in').disabled = false;
       // [END_EXCLUDE]
-  });
+  });*/
     // [END authstatelistener]
   //document.getElementById('quickstart-sign-in').addEventListener('click', toggleSignIn, false);
   //document.getElementById('quickstart-sign-up').addEventListener('click', handleSignUp, false);
-}*/
+}
 
 
 window.onload = function() {
-  //initApp();
+  initApp();
 };
 
 

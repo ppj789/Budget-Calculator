@@ -38,7 +38,7 @@ function initApp() {
       fireConnect();
       GetfromURL();
 
-      var displayName = user.displayName;
+      /*var displayName = user.displayName;
       var email = user.email;
       var emailVerified = user.emailVerified;
       var photoURL = user.photoURL;
@@ -47,11 +47,11 @@ function initApp() {
       var providerData = user.providerData;
 
       document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
-      document.getElementById('quickstart-account-details').textContent = JSON.stringify(user, null, '  ');
+      document.getElementById('quickstart-account-details').textContent = JSON.stringify(user, null, '  ');*/
     }
     else{
-      document.getElementById('quickstart-sign-in-status').textContent = 'Signed out';
-      document.getElementById('quickstart-account-details').textContent = JSON.stringify(user, null, '  ');
+      /*document.getElementById('quickstart-sign-in-status').textContent = 'Signed out';
+      document.getElementById('quickstart-account-details').textContent = JSON.stringify(user, null, '  ');*/
       window.location = "https://dragon-monkeys.firebaseapp.com"
     }
   });
