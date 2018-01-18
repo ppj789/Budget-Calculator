@@ -59,7 +59,7 @@ function refreshPets(){
 
         var divi = document.createElement("div");
         var nameDiv = document.createElement("div");
-        divi.class = "pet-pic";
+        divi.class = "pet";
         nameDiv.class = "pet-name";
 
         name.innerText = pet.child("petName").val();
