@@ -55,12 +55,12 @@ function refreshPets(){
           console.log("image failed");
           img.src = "https://firebasestorage.googleapis.com/v0/b/dragon-monkeys.appspot.com/o/dog.png?alt=media&token=9aeedbd1-8d6b-4c2e-bc2a-d697161e9cff";
         });
-        img.class = "pet-pic";
+        img.className = "pet-pic";
 
         var divi = document.createElement("div");
         var nameDiv = document.createElement("div");
-        divi.class = "pet";
-        nameDiv.class = "pet-name";
+        divi.className = "pet";
+        nameDiv.className = "pet-name";
 
         name.innerText = pet.child("petName").val();
         name.addEventListener("click", function() { Petprofile(pet.key); }, true);
