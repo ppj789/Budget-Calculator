@@ -13,6 +13,7 @@ function fireConnect(){
 function toggleSignIn() {
   alert("signing out");
   firebase.auth().signOut();
+  window.location.href = "https://dragon-monkeys.firebaseapp.com/";
 }
 
 function handleFileSelect(evt) {
