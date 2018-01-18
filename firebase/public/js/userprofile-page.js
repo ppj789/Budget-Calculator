@@ -74,7 +74,7 @@ function refreshPets(){
     })
     var butt = document.createElement("button");
     butt.id = "add-pet-button";
-    butt..addEventListener('click', openDialogue, false);
+    butt.addEventListener('click', openDialogue, false);
 
     var divi = document.createElement("div");
     divi.className = "pet";
