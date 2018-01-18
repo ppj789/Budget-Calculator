@@ -74,6 +74,7 @@ function refreshPets(){
     })
     var butt = document.createElement("button");
     butt.id = "add-pet-button";
+    butt.innerText = "Add Pet";
     butt.addEventListener('click', openDialogue, false);
 
     var divi = document.createElement("div");
@@ -168,8 +169,11 @@ function openDialogue() {
     document.getElementsByTagName("BODY")[0].style.overflow = "hidden";
 }
 
-function closeDialogue() {
+function closeDialogue(num) {
   document.getElementById("dialogue-div").style.zIndex = "0";
   document.getElementsByTagName("BODY")[0].style.overflow = "auto";
-  addPet();
+  if(num == 1)
+  {
+    addPet();
+  }
 }
