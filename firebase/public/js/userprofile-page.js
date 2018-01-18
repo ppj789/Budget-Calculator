@@ -45,7 +45,7 @@ function refreshPets(){
       }
       else{
         var img = document.createElement("img");
-        var name = document.createElement("button");
+        var name = document.createElement("div");
         var petName = pet.child("petName").val();
         console.log("Pet: " + petName);
 
@@ -56,6 +56,7 @@ function refreshPets(){
           img.src = "https://firebasestorage.googleapis.com/v0/b/dragon-monkeys.appspot.com/o/dog.png?alt=media&token=9aeedbd1-8d6b-4c2e-bc2a-d697161e9cff";
         });
         img.className = "pet-pic";
+        img.addEventListener("click", function() { Petprofile(pet.key); }, true);
 
         var divi = document.createElement("div");
         var nameDiv = document.createElement("div");
@@ -71,6 +72,17 @@ function refreshPets(){
         e.appendChild(divi);
       }
     })
+    var butt = document.createElement("button");
+    butt.id = "add-pet-button";
+    butt..addEventListener('click', openDialogue, false);
+
+    var divi = document.createElement("div");
+    divi.className = "pet";
+
+    divi.appendChild(butt);
+
+    e.appendChild(divi);
+
     console.log("finished refresh");
   });
 }
@@ -118,7 +130,7 @@ function initApp() {
       var uid = user.uid;
       var providerData = user.providerData;
 
-      document.getElementById('add-pet-button').addEventListener('click', addPet, false);
+      document.getElementById('add-pet-button').addEventListener('click', openDialogue, false);
 
       document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
       //document.getElementById('quickstart-account-details').textContent = JSON.stringify(user, null, '  ');
@@ -159,4 +171,5 @@ function openDialogue() {
 function closeDialogue() {
   document.getElementById("dialogue-div").style.zIndex = "0";
   document.getElementsByTagName("BODY")[0].style.overflow = "auto";
+  addPet();
 }
