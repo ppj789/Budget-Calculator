@@ -89,24 +89,61 @@ function refreshPets(){
   });
 }
 
-function HateyouFireBase(numPet){
+/*function HateyouFireBase(numPet){
   numPet++;
   console.log("new numPet: " + numPet)
   database.ref('users/' + auth.uid + '/pets').update({ num: numPet });
   var refStr =   database.ref('users/' + auth.uid + '/pets/pet ' + numPet);
-  refStr.set({
-    petImg: "dog.png",
-    petName: "default"
-  });
+
+  var petname = document.getElementById("pet-name-input").value;
+  if(petname.length == 0){
+    petname = "Default";
+  }
+  //var petImage = document.getElementById("pet-name-input").value;
+
+  refStr.update({name: petname});
+
+
   refreshPets();
-}
+}*/
 
 function addPet(){
   //console.log("add Pet");
   database.ref('users/' + auth.uid + "/pets").once("value").then(function(snapshot) {
     var numPet = snapshot.child("num").val();
     //console.log("numPet retrieved addPet(): " + numPet);
-    HateyouFireBase(numPet);
+    numPet++;
+    console.log("new numPet: " + numPet)
+    database.ref('users/' + auth.uid + '/pets').update({ num: numPet });
+    var refStr =   database.ref('users/' + auth.uid + '/pets/pet ' + numPet);
+
+    var petname = document.getElementById("pet-name-input").value;
+    if(petname.length == 0){
+      petname = "Default";
+    }
+    //var petImage = document.getElementById("pet-name-input").value;
+
+    var file = document.getElementById("petfile").files[0];
+    var metadata = {
+      'contentType': file.type
+    };
+    console.log("Your email is: " + auth.email);
+    storage.ref().child(auth.uid +'/' +file.name).put(file, metadata).then(function(snapshot) {
+      console.log('Uploaded', snapshot.totalBytes, 'bytes.');
+      console.log(snapshot.metadata);
+      var url = snapshot.downloadURL;
+      console.log('File available at', url);
+    }).catch(function(error) {
+      console.error('Upload failed:', error);
+    });
+
+    refStr.update({
+      petName: petname,
+      petImg: file.name
+    });
+
+
+    refreshPets();
   });
 }
 
@@ -124,17 +161,27 @@ function initApp() {
       //console.log("refresh in initApp");
       refreshPets();
 
-      var displayName = user.displayName;
+      /*var displayName = user.displayName;
       var email = user.email;
       var emailVerified = user.emailVerified;
       var photoURL = user.photoURL;
       var isAnonymous = user.isAnonymous;
       var uid = user.uid;
-      var providerData = user.providerData;
+      var providerData = user.providerData;*/
 
-      document.getElementById('add-pet-button').addEventListener('click', openDialogue, false);
+      database.ref('users/' + auth.uid ).once("value").then(function(snapshot) {
+        storage.refFromURL("gs://dragon-monkeys.appspot.com/" + auth.uid + "/" + snapshot.child("picture").val()).getDownloadURL().then(function(url) {
+          document.getElementById("profile-pic").src = url;
+        }).catch(function(error) {
+          console.log("image failed");
+          document.getElementById("profile-pic").src = "https://firebasestorage.googleapis.com/v0/b/dragon-monkeys.appspot.com/o/dog.png?alt=media&token=9aeedbd1-8d6b-4c2e-bc2a-d697161e9cff";
+        });
+      });
 
-      document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
+
+      //document.getElementById('add-pet-button').addEventListener('click', openDialogue, false);
+
+      //document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
       //document.getElementById('quickstart-account-details').textContent = JSON.stringify(user, null, '  ');
     }
     else{
