@@ -137,9 +137,9 @@ function initApp() {
       //document.getElementById('quickstart-account-details').textContent = JSON.stringify(user, null, '  ');
     }
     else{
-      document.getElementById('quickstart-sign-in-status').textContent = 'Signed out';
+      /*document.getElementById('quickstart-sign-in-status').textContent = 'Signed out';
       //document.getElementById('quickstart-account-details').textContent = JSON.stringify(user, null, '  ');
-      window.location = "https://dragon-monkeys.firebaseapp.com"
+      window.location = "https://dragon-monkeys.firebaseapp.com"*/
     }
   });
   document.getElementById('sign-out').addEventListener('click', toggleSignIn, false);
