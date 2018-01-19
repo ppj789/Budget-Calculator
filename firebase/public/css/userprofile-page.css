@@ -106,7 +106,7 @@ a:hover {
 #cover-photo{
   width: 100%;
   height: 220px;
-  background-image: url("../images/cover_photo_placeholder.jpg");
+  background-image: url("../images/cover_photo_placeholder.png");
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
@@ -125,7 +125,7 @@ a:hover {
 #profile-pic-landing {
   width: 100px;
   height: 100px;
-  background-image: url("../images/profile-pic-placeholder.jpg");
+  background-image: url("../images/profile-pic-placeholder.png");
   background-repeat: no-repeat;
   background-size: cover;
   float: left;
