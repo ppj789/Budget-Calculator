@@ -58,6 +58,26 @@ function initApp() {
 
         var namediv = document.getElementById("pet-name");
         namediv.innerHTML = snapshot.child("petName").val();
+
+        snapshot.forEach(function(pet){
+          if(pet.key == "petName"){
+
+          }
+          else if(pet.key == "petImg"){
+
+          }
+          else {
+            console.log(pet.key);
+
+            var statD = document.createElement("div");
+            statD.className = "stat";
+            statD.innerHTML = pet.key + ": " + pet.val();
+
+            var statList = document.getElementById("stats-list");
+            statList.appendChild(statD);
+          }
+        });
+
       });
 
 

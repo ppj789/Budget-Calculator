@@ -173,6 +173,8 @@ function initApp() {
           console.log("image failed");
           document.getElementById("cover-pic").src = "https://firebasestorage.googleapis.com/v0/b/dragon-monkeys.appspot.com/o/dog.png?alt=media&token=9aeedbd1-8d6b-4c2e-bc2a-d697161e9cff";
         });
+
+        document.getElementById("user-name").innerHTML = snapshot.child("name").val();
       });
 
       document.getElementById("add-pet-fact-button").addEventListener('click', addStat, false);
