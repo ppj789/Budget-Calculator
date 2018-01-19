@@ -89,23 +89,7 @@ function refreshPets(){
   });
 }
 
-/*function HateyouFireBase(numPet){
-  numPet++;
-  console.log("new numPet: " + numPet)
-  database.ref('users/' + auth.uid + '/pets').update({ num: numPet });
-  var refStr =   database.ref('users/' + auth.uid + '/pets/pet ' + numPet);
 
-  var petname = document.getElementById("pet-name-input").value;
-  if(petname.length == 0){
-    petname = "Default";
-  }
-  //var petImage = document.getElementById("pet-name-input").value;
-
-  refStr.update({name: petname});
-
-
-  refreshPets();
-}*/
 
 function addPet(){
   //console.log("add Pet");
@@ -155,9 +139,12 @@ function Petprofile(pet){
 
 function addStat(){
   database.ref('users/' + auth.uid + "/pets").once("value").then(function(snapshot) {
-    var numPet = snapshot.child("num").val();
+    var numPet = snapshot.child("num").val() + 1;
     var update = {};
-    update[document.getElementById('pet-fact-field').value] = document.getElementById('pet-fact-value').value;
+    var statVal = document.getElementById('statVal').value;
+    var statKey = document.getElementById("statKey").value;
+    console.log (statKey + ": " + statVal);
+    update[statKey] = statVal;
     database.ref('users/' + auth.uid + '/pets/pet ' + numPet).update(update);
   });
 }
@@ -167,16 +154,9 @@ function initApp() {
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       fireConnect();
-      //console.log("refresh in initApp");
       refreshPets();
 
-      /*var displayName = user.displayName;
-      var email = user.email;
-      var emailVerified = user.emailVerified;
-      var photoURL = user.photoURL;
-      var isAnonymous = user.isAnonymous;
-      var uid = user.uid;
-      var providerData = user.providerData;*/
+
 
       database.ref('users/' + auth.uid ).once("value").then(function(snapshot) {
         storage.refFromURL("gs://dragon-monkeys.appspot.com/" + auth.uid + "/" + snapshot.child("picture").val()).getDownloadURL().then(function(url) {
@@ -197,19 +177,13 @@ function initApp() {
 
       document.getElementById("add-pet-fact-button").addEventListener('click', addStat, false);
 
-      //document.getElementById('add-pet-button').addEventListener('click', openDialogue, false);
 
-      //document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
-      //document.getElementById('quickstart-account-details').textContent = JSON.stringify(user, null, '  ');
     }
     else{
-      /*document.getElementById('quickstart-sign-in-status').textContent = 'Signed out';
-      //document.getElementById('quickstart-account-details').textContent = JSON.stringify(user, null, '  ');
-      window.location = "https://dragon-monkeys.firebaseapp.com"*/
+
     }
   });
   document.getElementById('sign-out').addEventListener('click', toggleSignIn, false);
-  //document.getElementById('file').addEventListener('change', handleFileSelect, false);
 }
 
 
