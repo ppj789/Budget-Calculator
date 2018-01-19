@@ -27,6 +27,7 @@ function GetfromURL(){
     pet = query;
 
     pet = pet.replace("%20", " ");
+    pet = pet.replace("#", "");
 
     console.log("Pet that will be opened: "+ pet);
 }
@@ -37,6 +38,27 @@ function initApp() {
     if (user) {
       fireConnect();
       GetfromURL();
+
+      database.ref('users/' + auth.uid ).once("value").then(function(snapshot) {
+        storage.refFromURL("gs://dragon-monkeys.appspot.com/" + auth.uid + "/" + snapshot.child("picture").val()).getDownloadURL().then(function(url) {
+          document.getElementById("profile-pic").src = url;
+        }).catch(function(error) {
+          console.log("profile failed");
+          document.getElementById("profile-pic").src = "https://firebasestorage.googleapis.com/v0/b/dragon-monkeys.appspot.com/o/dog.png?alt=media&token=9aeedbd1-8d6b-4c2e-bc2a-d697161e9cff";
+        });
+      });
+
+      database.ref('users/' + auth.uid + "/pets/pet " + pet ).once("value").then(function(snapshot) {
+        storage.refFromURL("gs://dragon-monkeys.appspot.com/" + auth.uid + "/" + snapshot.child("petImg").val()).getDownloadURL().then(function(url) {
+          document.getElementById("pet-pic").src = url;
+        }).catch(function(error) {
+          console.log("image failed");
+          document.getElementById("profile-pic").src = "https://firebasestorage.googleapis.com/v0/b/dragon-monkeys.appspot.com/o/dog.png?alt=media&token=9aeedbd1-8d6b-4c2e-bc2a-d697161e9cff";
+        });
+
+        var namediv = document.getElementById("pet-name");
+        namediv.innerHTML = snapshot.child("petName").val();
+      });
 
       /*var displayName = user.displayName;
       var email = user.email;
