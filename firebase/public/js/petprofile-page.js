@@ -27,6 +27,7 @@ function GetfromURL(){
     pet = query;
 
     pet = pet.replace("%20", " ");
+    pet = pet.replace("#", "");
 
     console.log("Pet that will be opened: "+ pet);
 }
