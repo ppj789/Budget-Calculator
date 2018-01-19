@@ -115,7 +115,11 @@ a:hover {
 #cover-pic {
   width: 100%;
   height: 220px;
-  position: absolute;
+  position: relative;
+}
+
+#profile-pic-landing-container {
+  z-index: 2;
 }
 
 #profile-pic-landing {
@@ -128,7 +132,6 @@ a:hover {
 }
 
 #big-profile-pic {
-  position: absolute;
   width: 100px;
   height: 100px;
 }
